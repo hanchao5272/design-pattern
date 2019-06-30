@@ -39,6 +39,5 @@ public class PrinterUtil {
     /**
      * 测试相关：最大线程量
      */
-
     public static Integer MAX_THREAD = 1000;
 }
