@@ -19,8 +19,8 @@ public class MultiFactoryMethodsDemo {
      * - 为了解决以上问题，尝试创建多个工厂类，增加新的产品，则增加新的工厂和新的工厂方法。如此形成了：抽象工厂模式。
      */
     public static void main(String[] args) {
-        //某客户下了一笔大单子，要求生产2台苹果手机和1台安卓手机
-        //于是手机工厂开始了生产
+        //某客户下了一笔大单子，要求制造2台苹果手机和1台安卓手机
+        //于是手机工厂开始了制造
 
         //先来一台苹果手机
         Phone phone = PhoneFactory.produceApplePhone();

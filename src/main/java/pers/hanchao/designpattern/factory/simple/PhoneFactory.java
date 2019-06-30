@@ -20,15 +20,15 @@ public class PhoneFactory {
         Phone phone;
         switch (type) {
             case TYPE_APPLE:
-                //生产一个苹果手机
+                //制造一个苹果手机
                 phone = new ApplePhone();
                 break;
             case TYPE_ANDROID:
-                //生产一个安卓手机
+                //制造一个安卓手机
                 phone = new AndroidPhone();
                 break;
             default:
-                throw new IllegalArgumentException("此型号手机暂不生产！");
+                throw new IllegalArgumentException("此型号手机暂不制造！");
         }
         return phone;
     }

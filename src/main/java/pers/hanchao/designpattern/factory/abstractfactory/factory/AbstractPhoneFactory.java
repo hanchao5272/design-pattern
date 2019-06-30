@@ -10,7 +10,7 @@ import pers.hanchao.designpattern.factory.simple.telephone.Phone;
  */
 public abstract class AbstractPhoneFactory {
     /**
-     * 生产手机
+     * 制造手机
      *
      * @return 手机
      */

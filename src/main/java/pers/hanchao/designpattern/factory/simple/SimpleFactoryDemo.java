@@ -19,8 +19,8 @@ public class SimpleFactoryDemo {
      * - 为了解决以上问题，尝试将每种对象的创建方法都抽取成单独的工厂方法。如此形成了：多个工厂方法模式
      */
     public static void main(String[] args) {
-        //某客户下了一笔大单子，要求生产2台苹果手机和1台安卓手机
-        //于是手机工厂开始了生产
+        //某客户下了一笔大单子，要求制造2台苹果手机和1台安卓手机
+        //于是手机工厂开始了制造
 
         //先来一台苹果手机
         Phone phone = PhoneFactory.producePhone(PhoneFactory.TYPE_APPLE);

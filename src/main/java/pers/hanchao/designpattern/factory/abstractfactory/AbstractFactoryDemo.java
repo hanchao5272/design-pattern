@@ -18,8 +18,8 @@ public class AbstractFactoryDemo {
      * - 优点：扩展性好，每增减一种产品，只需要增减此对象专用的工厂及创建方法，不会修改其他工厂，遵循了开放-封闭原则（OCP，对扩展开放，对修改关闭）。
      */
     public static void main(String[] args) {
-        //某客户下了一笔大单子，要求生产2台苹果手机和1台安卓手机
-        //于是手机工厂开始了生产
+        //某客户下了一笔大单子，要求制造2台苹果手机和1台安卓手机
+        //于是手机工厂开始了制造
 
         //先来一台苹果手机
         Phone phone = new ApplePhoneFactory().producePhone();
