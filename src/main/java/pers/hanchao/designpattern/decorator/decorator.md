@@ -26,3 +26,10 @@
 
 - `复用性高`：只要使用某种装饰品，则必然复用其代码。
 - `扩展性高`：如果需求发送变化，例如新增一种装饰品巧克力，则只需要新增一种装饰品`ChocolateDecorator`即可。
+
+## 装饰者模式的实际应用
+
+- 场景：
+    - `HttpServletRequest`的body是流格式，只可读取一次。
+    - 通过自定义包装类`RequestBodyWrapper.java`继承HttpServletRequestWrapper，重写getInputStream和getReader实现了对HttpServletRequest请求的包装，将body数据提取出来放入byte数组中，从而实现request中body数据的多次使用。
+- URL: [Spring MVC代码实例系列-11：Spring MVC实现简单的权限控制拦截器和请求信息统计拦截器](https://blog.csdn.net/hanchao5272/article/details/79163897)
