@@ -26,11 +26,9 @@ public class NewspaperDemo {
         newspaper.notifyObservers();
         System.out.println("--------------------------------------");
 
-        //后来，有一个人取消了订阅报纸
-        newspaper.deleteObserver(jack);
+        //换一份报纸
         //邮寄报纸
         newspaper.setMessage("环球时报");
-        newspaper.setChanged();
         newspaper.notifyObservers();
     }
 }

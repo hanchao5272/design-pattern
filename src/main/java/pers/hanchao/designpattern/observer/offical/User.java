@@ -11,8 +11,6 @@ import java.util.Observer;
  *
  * @author hanchao
  */
-@Setter
-@Getter
 @AllArgsConstructor
 @Slf4j
 @ToString
@@ -21,10 +19,14 @@ public class User implements Observer {
     /**
      * 用户编号
      */
+    @Setter
+    @Getter
     private Integer id;
     /**
      * 用户名称
      */
+    @Setter
+    @Getter
     private String name;
 
     /**

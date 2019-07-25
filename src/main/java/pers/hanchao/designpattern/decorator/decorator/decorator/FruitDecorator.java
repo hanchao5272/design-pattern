@@ -37,12 +37,4 @@ public class FruitDecorator extends AbstractCakeDecorator {
     public float getCost() {
         return super.getCake().getCost() + cost;
     }
-
-    /**
-     * 显示花费
-     */
-    @Override
-    public void showCost() {
-        log.info("总价：{}", getCost());
-    }
 }

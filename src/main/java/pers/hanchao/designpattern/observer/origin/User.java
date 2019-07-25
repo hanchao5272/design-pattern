@@ -8,8 +8,6 @@ import lombok.extern.slf4j.Slf4j;
  *
  * @author hanchao
  */
-@Setter
-@Getter
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
@@ -18,10 +16,14 @@ public class User {
     /**
      * 用户编号
      */
+    @Setter
+    @Getter
     private Integer id;
     /**
      * 用户名称
      */
+    @Setter
+    @Getter
     private String name;
 
     /**
