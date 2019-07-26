@@ -6,11 +6,11 @@ import pers.hanchao.designpattern.responsibility.chain.impl.PassInterview;
 import pers.hanchao.designpattern.responsibility.chain.impl.TechnicalInterview;
 
 /**
- * <p></P>
+ * <p>通用的面试类</P>
  *
  * @author hanchao
  */
-public class SuperInterview {
+public class GeneralInterview {
 
     /**
      * 针对普通求职者的面试过程
@@ -28,7 +28,7 @@ public class SuperInterview {
 
     public static void main(String[] args) {
         for (int i = 0; i < 5; i++) {
-            SuperInterview.customInterview("求职者" + i);
+            GeneralInterview.customInterview("求职者" + i);
             System.out.println();
         }
     }

@@ -1,10 +1,8 @@
 package pers.hanchao.designpattern.responsibility.chain.impl;
 
-import lombok.AllArgsConstructor;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
-import pers.hanchao.designpattern.responsibility.chain.Interview;
+import pers.hanchao.designpattern.responsibility.chain.AbstractInterview;
 
 /**
  * <p>笔试</P>
@@ -12,12 +10,11 @@ import pers.hanchao.designpattern.responsibility.chain.Interview;
  * @author hanchao
  */
 @Slf4j
-@AllArgsConstructor
-public class ExamInterview implements Interview {
-    /**
-     * 下一轮面试
-     */
-    private Interview interview;
+public class ExamInterview extends AbstractInterview {
+
+    public ExamInterview(AbstractInterview interview) {
+        super(interview);
+    }
 
     /**
      * 面试
@@ -36,6 +33,6 @@ public class ExamInterview implements Interview {
         }
         log.info("[{}]进入下一轮面试。", name);
         log.info("--------------------------------");
-        return interview.interview(name);
+        return super.getInterview().interview(name);
     }
 }

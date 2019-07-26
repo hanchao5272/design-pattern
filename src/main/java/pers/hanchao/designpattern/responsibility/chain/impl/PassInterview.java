@@ -1,7 +1,7 @@
 package pers.hanchao.designpattern.responsibility.chain.impl;
 
 import lombok.extern.slf4j.Slf4j;
-import pers.hanchao.designpattern.responsibility.chain.Interview;
+import pers.hanchao.designpattern.responsibility.chain.AbstractInterview;
 
 /**
  * <p>面试通过</P>
@@ -9,11 +9,14 @@ import pers.hanchao.designpattern.responsibility.chain.Interview;
  * @author hanchao
  */
 @Slf4j
-public class PassInterview implements Interview {
+public class PassInterview extends AbstractInterview {
+
+    public PassInterview() {
+        super(null);
+    }
+
     /**
      * 面试
-     *
-     * @param name
      */
     @Override
     public String interview(String name) {
