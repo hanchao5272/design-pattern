@@ -1,6 +1,5 @@
 package pers.hanchao.designpattern.command.command.impl;
 
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import pers.hanchao.designpattern.command.command.Command;
 

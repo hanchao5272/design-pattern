@@ -13,14 +13,14 @@ public class Role {
     /**
      * 前进
      */
-    public void forward() {
-        log.info("前进");
+    public static void forward() {
+        log.info("角色前进");
     }
 
     /**
      * 跳跃
      */
-    public void jump() {
-        log.info("跳跃");
+    public static void jump() {
+        log.info("角色跳跃");
     }
 }
