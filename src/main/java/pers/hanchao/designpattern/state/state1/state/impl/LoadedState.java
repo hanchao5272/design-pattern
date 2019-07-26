@@ -1,10 +1,9 @@
 package pers.hanchao.designpattern.state.state1.state.impl;
 
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
 import pers.hanchao.designpattern.state.state1.Shooter;
-import pers.hanchao.designpattern.state.state1.state.State;
+import pers.hanchao.designpattern.state.state1.state.AbstractState;
 
 /**
  * <p>有子弹状态</P>
@@ -12,12 +11,11 @@ import pers.hanchao.designpattern.state.state1.state.State;
  * @author hanchao
  */
 @Slf4j
-@AllArgsConstructor
-public class LoadedState implements State {
-    /**
-     * 状态所属对象
-     */
-    private Shooter shooter;
+public class LoadedState extends AbstractState {
+
+    public LoadedState(Shooter shooter) {
+        super(shooter);
+    }
 
     /**
      * 射击
@@ -25,23 +23,13 @@ public class LoadedState implements State {
     @Override
     public void shoot() {
         //造成伤害
-        Integer damage = RandomUtils.nextInt(shooter.getMinPower(), shooter.getMaxPower());
-        shooter.setNowSize(shooter.getNowSize() - 1);
-        log.info("使用[{}]进行射击，造成[{}]伤害！还剩余[{}]颗子弹。", shooter.getName(), damage, shooter.getNowSize());
+        Integer damage = RandomUtils.nextInt(super.getShooter().getMinPower(), super.getShooter().getMaxPower());
+        super.getShooter().setNowSize(super.getShooter().getNowSize() - 1);
+        log.info("使用[{}]进行射击，造成[{}]伤害！还剩余[{}]颗子弹。", super.getShooter().getName(), damage, super.getShooter().getNowSize());
 
         //如果剩余子弹为0，则转换为无子弹状态
-        if (shooter.getNowSize() == 0) {
-            shooter.setCurrentState(shooter.getUnloadState());
+        if (super.getShooter().getNowSize() == 0) {
+            super.getShooter().setCurrentState(super.getShooter().getUnloadState());
         }
-    }
-
-    /**
-     * 填充子弹
-     */
-    @Override
-    public void fill() {
-        log.info("[{}]当前共[{}]发子弹，填充了[{}]发子弹。", shooter.getName(), shooter.getNowSize(), (shooter.getMaxSize() - shooter.getNowSize()));
-        shooter.setNowSize(shooter.getMaxSize());
-        shooter.setCurrentState(shooter.getLoadedState());
     }
 }

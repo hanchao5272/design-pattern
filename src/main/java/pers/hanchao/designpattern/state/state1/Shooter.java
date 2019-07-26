@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import pers.hanchao.designpattern.state.state1.state.State;
+import pers.hanchao.designpattern.state.state1.state.AbstractState;
 import pers.hanchao.designpattern.state.state1.state.impl.LoadedState;
 import pers.hanchao.designpattern.state.state1.state.impl.UnloadState;
 
@@ -49,17 +49,17 @@ public class Shooter {
     /**
      * 当前枪械状态
      */
-    private State currentState;
+    private AbstractState currentState;
 
     /**
      * 有子弹状态
      */
-    private State loadedState;
+    private AbstractState loadedState;
 
     /**
      * 无子弹状态
      */
-    private State unloadState;
+    private AbstractState unloadState;
 
 
     public Shooter(@NonNull String name, @NonNull Integer minPower, @NonNull Integer maxPower, @NonNull Integer maxSize) {

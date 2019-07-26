@@ -4,10 +4,10 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import pers.hanchao.designpattern.state.state2.state.State;
-import pers.hanchao.designpattern.state.state2.state.impl.DeadlyState;
 import pers.hanchao.designpattern.state.state2.state.impl.LoadedState;
 import pers.hanchao.designpattern.state.state2.state.impl.UnloadState;
+import pers.hanchao.designpattern.state.state2.state.AbstractState;
+import pers.hanchao.designpattern.state.state2.state.impl.DeadlyState;
 
 /**
  * <p>射击武器</P>
@@ -50,22 +50,22 @@ public class Shooter {
     /**
      * 当前枪械状态
      */
-    private State currentState;
+    private AbstractState currentState;
 
     /**
      * 有子弹状态
      */
-    private State loadedState;
+    private AbstractState loadedState;
 
     /**
      * 无子弹状态
      */
-    private State unloadState;
+    private AbstractState unloadState;
 
     /**
      * 致死状态
      */
-    private State deadlyState;
+    private AbstractState deadlyState;
 
 
     public Shooter(@NonNull String name, @NonNull Integer minPower, @NonNull Integer maxPower, @NonNull Integer maxSize) {
