@@ -1,4 +1,4 @@
-package pers.hanchao.designpattern.command.invoker;
+package pers.hanchao.designpattern.command;
 
 /**
  * <p>按键</P>
@@ -49,5 +49,5 @@ public enum KeyEnum {
     /**
      * 按键：无
      */
-    KEY_NULL;
+    KEY_NULL
 }

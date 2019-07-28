@@ -21,7 +21,5 @@ public class UiHandler {
      */
     public static void showSkill() {
         log.info("打开技能界面，已掌握的技能有：暗影之舞，剑刃风暴，神圣之光...");
-
     }
-
 }

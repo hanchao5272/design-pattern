@@ -1,23 +1,21 @@
-package pers.hanchao.designpattern.command;
+package pers.hanchao.designpattern.command.invoker;
 
-import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
+import pers.hanchao.designpattern.command.KeyEnum;
 import pers.hanchao.designpattern.command.command.Command;
 import pers.hanchao.designpattern.command.command.impl.*;
-import pers.hanchao.designpattern.command.invoker.KeyEnum;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 /**
- * <p>游戏客户端</P>
+ * <p>调用者:按键管理器</P>
  *
  * @author hanchao
  */
 @Slf4j
-public class GameClient {
+public class KeyManager {
 
     /**
      * 假设共计32种游戏操作
@@ -52,7 +50,7 @@ public class GameClient {
         log.info("按下了「{}」", key.name());
         //执行此按键
         Command command = commandMap.get(key);
-        if (Objects.isNull(command)){
+        if (Objects.isNull(command)) {
             command = new DefaultCommand();
         }
         command.execute();
@@ -84,26 +82,4 @@ public class GameClient {
         //将新按键绑定到当前操作
         commandMap.put(newKey, command);
     }
-
-    public static void main(String[] args) {
-        //默认按键
-        GameClient.press(KeyEnum.KEY_W);
-        GameClient.press(KeyEnum.KEY_SPACE);
-        System.out.println("==============================================================================================================");
-
-        //将角色跳跃的快捷键进行替换
-        GameClient.setCustomKey(new RoleJumpCommand(), KeyEnum.KEY_SPACE, KeyEnum.KEY_ENTER);
-        GameClient.press(KeyEnum.KEY_SPACE);
-        GameClient.press(KeyEnum.KEY_ENTER);
-        System.out.println("==============================================================================================================");
-
-        //自定义宏命令:角色前进、释放技能:潜行术、释放技能:火球术，并将其绑定在按键A
-        GameClient.press(KeyEnum.KEY_A);
-        List<Command> commandList = Lists.newArrayList(
-                new RoleForwardCommand(), new ReleaseSneakCommand(), new ReleaseFireBallCommand()
-        );
-        GameClient.setCustomKey(new MacroCommand(commandList), null, KeyEnum.KEY_A);
-        GameClient.press(KeyEnum.KEY_A);
-    }
-
 }
