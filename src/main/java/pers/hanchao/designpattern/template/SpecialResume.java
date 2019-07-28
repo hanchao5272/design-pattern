@@ -32,9 +32,4 @@ public class SpecialResume extends AbstractResume {
     protected void fillInOther() {
         log.info("「{}」开始填写兴趣爱好...", super.getName());
     }
-
-    public static void main(String[] args) {
-        AbstractResume resume = new SpecialResume("李四");
-        resume.fillIn();
-    }
 }

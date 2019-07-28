@@ -13,17 +13,4 @@ public class CustomResume extends AbstractResume {
     public CustomResume(@NonNull String name) {
         super(name, false, false);
     }
-
-    /**
-     * 其他
-     */
-    @Override
-    protected void fillInOther() {
-        //do nothing
-    }
-
-    public static void main(String[] args) {
-        AbstractResume resume = new CustomResume("张三");
-        resume.fillIn();
-    }
 }

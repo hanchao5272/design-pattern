@@ -32,7 +32,7 @@ public abstract class AbstractResume {
     private boolean fillInOther = false;
 
     /**
-     * 显示简历
+     * 填写简历
      */
     public final void fillIn() {
         log.info("=====「{}」开始填写简历=====", name);
@@ -139,5 +139,7 @@ public abstract class AbstractResume {
     /**
      * 其他
      */
-    protected abstract void fillInOther();
+    protected void fillInOther(){
+        //do nothing
+    }
 }
